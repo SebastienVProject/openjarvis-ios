@@ -22,6 +22,7 @@
 		2D34E2111EE45EA000D84B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D34E2141EE45EA000D84B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D34E2161EE45EA000D84B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openjarvis.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		2D34E2091EE45EA000D84B15 /* openjarvis */ = {
 			isa = PBXGroup;
 			children = (
+				2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */,
 				2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */,
 				2D34E20C1EE45EA000D84B15 /* ViewController.swift */,
 				2D34E20E1EE45EA000D84B15 /* Main.storyboard */,
@@ -98,6 +100,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = Q735H4RZJ8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -263,10 +270,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = openjarvis/openjarvis.entitlements;
 				DEVELOPMENT_TEAM = Q735H4RZJ8;
 				INFOPLIST_FILE = openjarvis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SVInfo.openjarvis;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SVInfo.openjarvis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -276,10 +284,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = openjarvis/openjarvis.entitlements;
 				DEVELOPMENT_TEAM = Q735H4RZJ8;
 				INFOPLIST_FILE = openjarvis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SVInfo.openjarvis;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SVInfo.openjarvis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
