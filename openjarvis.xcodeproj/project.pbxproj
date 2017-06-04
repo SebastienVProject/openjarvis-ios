@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D235BF61EE4AFFB003F7F1A /* gestionMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */; };
+		2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BF81EE4B126003F7F1A /* jarvis.png */; };
+		2D235C001EE4B126003F7F1A /* jarvisWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BF91EE4B126003F7F1A /* jarvisWhite.png */; };
+		2D235C011EE4B126003F7F1A /* iconeOption.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFA1EE4B126003F7F1A /* iconeOption.png */; };
+		2D235C021EE4B126003F7F1A /* blueBulle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFB1EE4B126003F7F1A /* blueBulle.png */; };
+		2D235C031EE4B126003F7F1A /* whiteBulle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFC1EE4B126003F7F1A /* whiteBulle.png */; };
+		2D235C041EE4B126003F7F1A /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFD1EE4B126003F7F1A /* microphone.png */; };
+		2D235C051EE4B126003F7F1A /* engrenage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFE1EE4B126003F7F1A /* engrenage.png */; };
 		2D34E20B1EE45EA000D84B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */; };
 		2D34E20D1EE45EA000D84B15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34E20C1EE45EA000D84B15 /* ViewController.swift */; };
 		2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E20E1EE45EA000D84B15 /* Main.storyboard */; };
@@ -15,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gestionMessages.swift; sourceTree = "<group>"; };
+		2D235BF81EE4B126003F7F1A /* jarvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jarvis.png; sourceTree = "<group>"; };
+		2D235BF91EE4B126003F7F1A /* jarvisWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jarvisWhite.png; sourceTree = "<group>"; };
+		2D235BFA1EE4B126003F7F1A /* iconeOption.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconeOption.png; sourceTree = "<group>"; };
+		2D235BFB1EE4B126003F7F1A /* blueBulle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBulle.png; sourceTree = "<group>"; };
+		2D235BFC1EE4B126003F7F1A /* whiteBulle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteBulle.png; sourceTree = "<group>"; };
+		2D235BFD1EE4B126003F7F1A /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
+		2D235BFE1EE4B126003F7F1A /* engrenage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engrenage.png; sourceTree = "<group>"; };
 		2D34E2071EE45EA000D84B15 /* openjarvis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openjarvis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D34E20C1EE45EA000D84B15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D235C061EE4B132003F7F1A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				2D235BF81EE4B126003F7F1A /* jarvis.png */,
+				2D235BF91EE4B126003F7F1A /* jarvisWhite.png */,
+				2D235BFA1EE4B126003F7F1A /* iconeOption.png */,
+				2D235BFB1EE4B126003F7F1A /* blueBulle.png */,
+				2D235BFC1EE4B126003F7F1A /* whiteBulle.png */,
+				2D235BFD1EE4B126003F7F1A /* microphone.png */,
+				2D235BFE1EE4B126003F7F1A /* engrenage.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		2D34E1FE1EE45EA000D84B15 = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +88,12 @@
 				2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */,
 				2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */,
 				2D34E20C1EE45EA000D84B15 /* ViewController.swift */,
+				2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */,
 				2D34E20E1EE45EA000D84B15 /* Main.storyboard */,
 				2D34E2111EE45EA000D84B15 /* Assets.xcassets */,
 				2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */,
 				2D34E2161EE45EA000D84B15 /* Info.plist */,
+				2D235C061EE4B132003F7F1A /* images */,
 			);
 			path = openjarvis;
 			sourceTree = "<group>";
@@ -131,8 +163,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */,
+				2D235C011EE4B126003F7F1A /* iconeOption.png in Resources */,
 				2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */,
+				2D235C041EE4B126003F7F1A /* microphone.png in Resources */,
+				2D235C001EE4B126003F7F1A /* jarvisWhite.png in Resources */,
 				2D34E2121EE45EA000D84B15 /* Assets.xcassets in Resources */,
+				2D235C021EE4B126003F7F1A /* blueBulle.png in Resources */,
+				2D235C031EE4B126003F7F1A /* whiteBulle.png in Resources */,
+				2D235C051EE4B126003F7F1A /* engrenage.png in Resources */,
 				2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D34E20D1EE45EA000D84B15 /* ViewController.swift in Sources */,
+				2D235BF61EE4AFFB003F7F1A /* gestionMessages.swift in Sources */,
 				2D34E20B1EE45EA000D84B15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +353,7 @@
 				2D34E21B1EE45EA000D84B15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
