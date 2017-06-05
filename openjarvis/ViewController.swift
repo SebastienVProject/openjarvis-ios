@@ -12,12 +12,14 @@ import Speech
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
-   
+    static var urljarvis: String!
+    static var portjarvis: String!
+    
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var scrollVue: UIScrollView!
     @IBOutlet weak var textView: UITextView!
     
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fr-FR"))!
     
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
@@ -56,6 +58,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             OperationQueue.main.addOperation() {
                 self.microphoneButton.isEnabled = isButtonEnabled
             }
+        }
+        
+        //on recupere les parametres de l'applicatif
+        var myDict: NSDictionary?
+        if let path = Bundle.main.path(forResource: "parametres", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+            ViewController.urljarvis = myDict?["urlJarvis"] as! String
+            ViewController.portjarvis = myDict?["portJarvis"] as! String
         }
     }
     

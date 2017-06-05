@@ -15,6 +15,7 @@
 		2D235C031EE4B126003F7F1A /* whiteBulle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFC1EE4B126003F7F1A /* whiteBulle.png */; };
 		2D235C041EE4B126003F7F1A /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFD1EE4B126003F7F1A /* microphone.png */; };
 		2D235C051EE4B126003F7F1A /* engrenage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFE1EE4B126003F7F1A /* engrenage.png */; };
+		2D235C081EE5922C003F7F1A /* parametres.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D235C071EE5922C003F7F1A /* parametres.plist */; };
 		2D34E20B1EE45EA000D84B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */; };
 		2D34E20D1EE45EA000D84B15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34E20C1EE45EA000D84B15 /* ViewController.swift */; };
 		2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E20E1EE45EA000D84B15 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		2D235BFC1EE4B126003F7F1A /* whiteBulle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteBulle.png; sourceTree = "<group>"; };
 		2D235BFD1EE4B126003F7F1A /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
 		2D235BFE1EE4B126003F7F1A /* engrenage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engrenage.png; sourceTree = "<group>"; };
+		2D235C071EE5922C003F7F1A /* parametres.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parametres.plist; sourceTree = "<group>"; };
 		2D34E2071EE45EA000D84B15 /* openjarvis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openjarvis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D34E20C1EE45EA000D84B15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				2D34E2111EE45EA000D84B15 /* Assets.xcassets */,
 				2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */,
 				2D34E2161EE45EA000D84B15 /* Info.plist */,
+				2D235C071EE5922C003F7F1A /* parametres.plist */,
 				2D235C061EE4B132003F7F1A /* images */,
 			);
 			path = openjarvis;
@@ -192,6 +195,7 @@
 			files = (
 				2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */,
 				2D235C011EE4B126003F7F1A /* iconeOption.png in Resources */,
+				2D235C081EE5922C003F7F1A /* parametres.plist in Resources */,
 				2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */,
 				2D235C041EE4B126003F7F1A /* microphone.png in Resources */,
 				2D235C001EE4B126003F7F1A /* jarvisWhite.png in Resources */,

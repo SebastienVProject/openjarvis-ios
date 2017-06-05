@@ -25,7 +25,9 @@ let bulleFontNameJarvis = "Verdana"
 public func TraiterDemande(bulleText: String, scrollVue: UIScrollView){
     AjouterBulle(jarvis: false, bulleText: bulleText, scrollVue: scrollVue)
     
-    Alamofire.request("http://192.168.0.14:8080/get", parameters: ["order": "bonjour tout le monde"]).responseJSON { response in
+    let URL_GET = ViewController.urljarvis + ":" + ViewController.portjarvis + "/get"
+    
+    Alamofire.request(URL_GET, parameters: ["order": bulleText]).responseJSON { response in
         
         if response.result.isSuccess {
             if let retour = response.result.value as? NSArray
