@@ -26,8 +26,16 @@ public func TraiterDemande(bulleText: String, scrollVue: UIScrollView){
     AjouterBulle(jarvis: false, bulleText: bulleText, scrollVue: scrollVue)
     
     let URL_GET = ViewController.urljarvis + ":" + ViewController.portjarvis + "/get"
+    var PARAMS : Parameters
+    if !ViewController.audioServeur {
+        PARAMS = ["order": bulleText, "mute": "true"]
+    } else {
+        PARAMS = ["order": bulleText, "mute": "false"]
+    }
+    print(URL_GET)
+    print(PARAMS)
     
-    Alamofire.request(URL_GET, parameters: ["order": bulleText]).responseJSON { response in
+    Alamofire.request(URL_GET, parameters: PARAMS).responseJSON { response in
         
         if response.result.isSuccess {
             if let retour = response.result.value as? NSArray
