@@ -20,6 +20,7 @@
 		2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E20E1EE45EA000D84B15 /* Main.storyboard */; };
 		2D34E2121EE45EA000D84B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2111EE45EA000D84B15 /* Assets.xcassets */; };
 		2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */; };
+		DC9FF098A3EE4F552E2E424E /* Pods_openjarvis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,9 @@
 		2D34E2141EE45EA000D84B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D34E2161EE45EA000D84B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openjarvis.entitlements; sourceTree = "<group>"; };
+		32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openjarvis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis.debug.xcconfig"; sourceTree = "<group>"; };
+		A70BEB95934136C522FC9698 /* Pods-openjarvis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openjarvis.release.xcconfig"; path = "Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis.release.xcconfig"; sourceTree = "<group>"; };
+		B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openjarvis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +50,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9FF098A3EE4F552E2E424E /* Pods_openjarvis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1989449932B8821AD90C612C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2D235C061EE4B132003F7F1A /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +84,8 @@
 			children = (
 				2D34E2091EE45EA000D84B15 /* openjarvis */,
 				2D34E2081EE45EA000D84B15 /* Products */,
+				D3A53449A3C9A939012A5ECD /* Pods */,
+				1989449932B8821AD90C612C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +113,15 @@
 			path = openjarvis;
 			sourceTree = "<group>";
 		};
+		D3A53449A3C9A939012A5ECD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */,
+				A70BEB95934136C522FC9698 /* Pods-openjarvis.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,9 +129,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D34E2191EE45EA000D84B15 /* Build configuration list for PBXNativeTarget "openjarvis" */;
 			buildPhases = (
+				9E185D337364EB366175FB92 /* [CP] Check Pods Manifest.lock */,
 				2D34E2031EE45EA000D84B15 /* Sources */,
 				2D34E2041EE45EA000D84B15 /* Frameworks */,
 				2D34E2051EE45EA000D84B15 /* Resources */,
+				C1C81A6CA6CCAF9A6D1C3EE7 /* [CP] Embed Pods Frameworks */,
+				0735785C25BB1D553BF272A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0735785C25BB1D553BF272A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E185D337364EB366175FB92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1C81A6CA6CCAF9A6D1C3EE7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D34E2031EE45EA000D84B15 /* Sources */ = {
@@ -308,6 +383,7 @@
 		};
 		2D34E21A1EE45EA000D84B15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = openjarvis/openjarvis.entitlements;
@@ -322,6 +398,7 @@
 		};
 		2D34E21B1EE45EA000D84B15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70BEB95934136C522FC9698 /* Pods-openjarvis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = openjarvis/openjarvis.entitlements;
