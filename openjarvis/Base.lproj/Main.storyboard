@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--Parametres View Controller-->
         <scene sceneID="iu1-Dx-RRb">
             <objects>
-                <viewController id="Gen-Ns-wrN" sceneMemberID="viewController">
+                <viewController id="Gen-Ns-wrN" customClass="ParametresViewController" customModule="openjarvis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g9l-zM-Iwc"/>
                         <viewControllerLayoutGuide type="bottom" id="Jjq-cb-dtd"/>
@@ -102,6 +102,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updateUrlJarvis:" destination="Gen-Ns-wrN" eventType="editingDidEnd" id="nMY-9B-AF0"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -119,6 +122,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updatePortJarvis:" destination="Gen-Ns-wrN" eventType="editingDidEnd" id="rLi-qf-8JH"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -184,6 +190,10 @@
                             <constraint firstItem="YRQ-13-4yV" firstAttribute="leading" secondItem="1Yu-Xz-xjj" secondAttribute="leadingMargin" constant="10" id="eKj-T9-UXG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="portJarvisText" destination="yb2-VS-qam" id="FS0-R3-L13"/>
+                        <outlet property="urlJarvisText" destination="P0t-wf-3ou" id="lA5-aN-CIX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpT-k1-WMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

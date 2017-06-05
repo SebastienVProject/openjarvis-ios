@@ -15,7 +15,8 @@
 		2D235C031EE4B126003F7F1A /* whiteBulle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFC1EE4B126003F7F1A /* whiteBulle.png */; };
 		2D235C041EE4B126003F7F1A /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFD1EE4B126003F7F1A /* microphone.png */; };
 		2D235C051EE4B126003F7F1A /* engrenage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BFE1EE4B126003F7F1A /* engrenage.png */; };
-		2D235C081EE5922C003F7F1A /* parametres.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D235C071EE5922C003F7F1A /* parametres.plist */; };
+		2D235C0A1EE5EEA6003F7F1A /* ParametresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D235C091EE5EEA6003F7F1A /* ParametresViewController.swift */; };
+		2D235C0B1EE6004B003F7F1A /* parametres.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D235C071EE5922C003F7F1A /* parametres.plist */; };
 		2D34E20B1EE45EA000D84B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */; };
 		2D34E20D1EE45EA000D84B15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34E20C1EE45EA000D84B15 /* ViewController.swift */; };
 		2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E20E1EE45EA000D84B15 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		2D235BFD1EE4B126003F7F1A /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
 		2D235BFE1EE4B126003F7F1A /* engrenage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engrenage.png; sourceTree = "<group>"; };
 		2D235C071EE5922C003F7F1A /* parametres.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parametres.plist; sourceTree = "<group>"; };
+		2D235C091EE5EEA6003F7F1A /* ParametresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametresViewController.swift; sourceTree = "<group>"; };
 		2D34E2071EE45EA000D84B15 /* openjarvis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openjarvis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D34E20C1EE45EA000D84B15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */,
 				2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */,
 				2D34E20C1EE45EA000D84B15 /* ViewController.swift */,
+				2D235C091EE5EEA6003F7F1A /* ParametresViewController.swift */,
 				2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */,
 				2D34E20E1EE45EA000D84B15 /* Main.storyboard */,
 				2D34E2111EE45EA000D84B15 /* Assets.xcassets */,
@@ -195,7 +198,7 @@
 			files = (
 				2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */,
 				2D235C011EE4B126003F7F1A /* iconeOption.png in Resources */,
-				2D235C081EE5922C003F7F1A /* parametres.plist in Resources */,
+				2D235C0B1EE6004B003F7F1A /* parametres.plist in Resources */,
 				2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */,
 				2D235C041EE4B126003F7F1A /* microphone.png in Resources */,
 				2D235C001EE4B126003F7F1A /* jarvisWhite.png in Resources */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D235C0A1EE5EEA6003F7F1A /* ParametresViewController.swift in Sources */,
 				2D34E20D1EE45EA000D84B15 /* ViewController.swift in Sources */,
 				2D235BF61EE4AFFB003F7F1A /* gestionMessages.swift in Sources */,
 				2D34E20B1EE45EA000D84B15 /* AppDelegate.swift in Sources */,

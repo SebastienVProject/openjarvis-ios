@@ -8,7 +8,7 @@
 
 import UIKit
 import Speech
-
+import SwiftyPlistManager
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
@@ -61,12 +61,18 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
         
         //on recupere les parametres de l'applicatif
-        var myDict: NSDictionary?
-        if let path = Bundle.main.path(forResource: "parametres", ofType: "plist") {
-            myDict = NSDictionary(contentsOfFile: path)
-            ViewController.urljarvis = myDict?["urlJarvis"] as! String
-            ViewController.portjarvis = myDict?["portJarvis"] as! String
+        SwiftyPlistManager.shared.getValue(for: "urlJarvis", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.urljarvis = result as! String
+            }
         }
+        SwiftyPlistManager.shared.getValue(for: "portJarvis", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.portjarvis = result as! String
+            }
+        }
+        
+        
     }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
