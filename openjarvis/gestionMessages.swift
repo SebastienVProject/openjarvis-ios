@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 var montexte: UITextView!
 var reponseJarvis: UITextView!
@@ -20,6 +21,26 @@ let bulleFontSize = 10
 let bulleFontName = "Arial"
 let bulleFontSizeJarvis = 11
 let bulleFontNameJarvis = "Verdana"
+
+public func TraiterDemande(bulleText: String, scrollVue: UIScrollView){
+    AjouterBulle(jarvis: false, bulleText: bulleText, scrollVue: scrollVue)
+    
+    Alamofire.request("http://192.168.0.14:8080/get", parameters: ["order": "bonjour tout le monde"]).responseJSON { response in
+        
+        if response.result.isSuccess {
+            if let retour = response.result.value as? NSArray
+            {
+                let JSON = retour[0] as! NSDictionary
+                if let answer = JSON["answer"]{
+                    AjouterBulle(jarvis: true, bulleText: answer as! String, scrollVue: scrollVue)
+                }
+            }
+        } else {
+            print("Requete invalide")
+            print (response)
+        }
+    }
+}
 
 public func AjouterBulle(jarvis: Bool, bulleText: String, scrollVue: UIScrollView){
     

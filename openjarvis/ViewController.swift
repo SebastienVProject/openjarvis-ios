@@ -120,7 +120,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.recognitionTask = nil
                 
                 self.microphoneButton.isEnabled = true
-                AjouterBulle(jarvis: false, bulleText: self.textView.text, scrollVue: self.scrollVue)
+                TraiterDemande(bulleText: self.textView.text, scrollVue: self.scrollVue)
             }
         })
         
