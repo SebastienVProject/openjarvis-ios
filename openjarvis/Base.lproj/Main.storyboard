@@ -148,7 +148,7 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="81e-JV-7uK">
                                         <rect key="frame" x="0.0" y="356.5" width="323" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="désactivation audio serveur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jg-z2-1jd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="activation audio serveur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jg-z2-1jd">
                                                 <rect key="frame" x="0.0" y="5" width="274" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,20 +156,26 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh8-3S-me7">
                                                 <rect key="frame" x="274" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="updateAudioServeur:" destination="Gen-Ns-wrN" eventType="valueChanged" id="VX3-Sa-UNG"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0SD-Cn-yNl">
                                         <rect key="frame" x="0.0" y="472" width="323" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="désactivation audio application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-ot-Wf3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="activation audio application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-ot-Wf3">
                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSl-o3-j29">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WSl-o3-j29">
                                                 <rect key="frame" x="274" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="updateAudioApplication:" destination="Gen-Ns-wrN" eventType="valueChanged" id="nuZ-j2-1Gl"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -192,6 +198,8 @@
                     </view>
                     <connections>
                         <outlet property="portJarvisText" destination="yb2-VS-qam" id="FS0-R3-L13"/>
+                        <outlet property="swichAudioApplication" destination="WSl-o3-j29" id="Mmh-Bz-Xj8"/>
+                        <outlet property="swichAudioServeur" destination="fh8-3S-me7" id="HF1-pq-BOR"/>
                         <outlet property="urlJarvisText" destination="P0t-wf-3ou" id="lA5-aN-CIX"/>
                     </connections>
                 </viewController>

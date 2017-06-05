@@ -13,17 +13,30 @@ class ParametresViewController: UIViewController {
 
     @IBOutlet weak var urlJarvisText: UITextField!
     @IBOutlet weak var portJarvisText: UITextField!
+    @IBOutlet weak var swichAudioServeur: UISwitch!
+    @IBOutlet weak var swichAudioApplication: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         urlJarvisText.text = ViewController.urljarvis
         portJarvisText.text = ViewController.portjarvis
+        swichAudioServeur.setOn(ViewController.audioServeur, animated: false)
+        swichAudioApplication.setOn(ViewController.audioApplication, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func updateAudioServeur(_ sender: UISwitch) {
+        ViewController.audioServeur = sender.isOn
+        updatePlistParametres(key: "audioServeur", valeur: ViewController.audioServeur)
+    }
+    @IBAction func updateAudioApplication(_ sender: UISwitch) {
+        ViewController.audioApplication = sender.isOn
+        updatePlistParametres(key: "audioApplication", valeur: ViewController.audioApplication)
     }
     
     @IBAction func updateUrlJarvis(_ sender: UITextField) {
@@ -36,7 +49,7 @@ class ParametresViewController: UIViewController {
         updatePlistParametres(key: "portJarvis", valeur: ViewController.portjarvis)
     }
     
-    func updatePlistParametres(key: String, valeur: String){
+    func updatePlistParametres(key: String, valeur: Any){
         
         SwiftyPlistManager.shared.save(valeur, forKey: key, toPlistWithName: "parametres") { (err) in
             if err == nil {

@@ -14,6 +14,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     static var urljarvis: String!
     static var portjarvis: String!
+    static var audioServeur: Bool!
+    static var audioApplication: Bool!
     
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var scrollVue: UIScrollView!
@@ -69,6 +71,16 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         SwiftyPlistManager.shared.getValue(for: "portJarvis", fromPlistWithName: "parametres") { (result, err) in
             if err == nil {
                 ViewController.portjarvis = result as! String
+            }
+        }
+        SwiftyPlistManager.shared.getValue(for: "audioApplication", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.audioApplication = result as! Bool
+            }
+        }
+        SwiftyPlistManager.shared.getValue(for: "audioServeur", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.audioServeur = result as! Bool
             }
         }
         
