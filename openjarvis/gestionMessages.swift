@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import Speech
 
 var montexte: UITextView!
 var reponseJarvis: UITextView!
@@ -21,6 +22,8 @@ let bulleFontSize = 10
 let bulleFontName = "Arial"
 let bulleFontSizeJarvis = 11
 let bulleFontNameJarvis = "Verdana"
+
+let speechSynthesizer = AVSpeechSynthesizer()
 
 public func TraiterDemande(bulleText: String, scrollVue: UIScrollView){
     AjouterBulle(jarvis: false, bulleText: bulleText, scrollVue: scrollVue)
@@ -43,6 +46,9 @@ public func TraiterDemande(bulleText: String, scrollVue: UIScrollView){
                 let JSON = retour[0] as! NSDictionary
                 if let answer = JSON["answer"]{
                     AjouterBulle(jarvis: true, bulleText: answer as! String, scrollVue: scrollVue)
+                    if ViewController.audioApplication {
+                        ReponseAudioDevice(reponse: answer as! String)
+                    }
                 }
             }
         } else {
@@ -50,6 +56,14 @@ public func TraiterDemande(bulleText: String, scrollVue: UIScrollView){
             print (response)
         }
     }
+}
+
+public func ReponseAudioDevice(reponse: String){
+    
+    let speechUtterance = AVSpeechUtterance(string: reponse)
+    speechUtterance.voice=AVSpeechSynthesisVoice(language: "fr-FR")
+    speechUtterance.volume = 10
+    speechSynthesizer.speak(speechUtterance)
 }
 
 public func AjouterBulle(jarvis: Bool, bulleText: String, scrollVue: UIScrollView){
