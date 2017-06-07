@@ -10,5 +10,13 @@
 	<string>http://192.168.0.14</string>
 	<key>portJarvis</key>
 	<string>8080</string>
+	<key>fontStyle</key>
+	<string>Arial</string>
+	<key>fontSize</key>
+	<integer>11</integer>
+	<key>fontStyleJarvis</key>
+	<string>Verdana</string>
+	<key>fontSizeJarvis</key>
+	<integer>12</integer>
 </dict>
 </plist>

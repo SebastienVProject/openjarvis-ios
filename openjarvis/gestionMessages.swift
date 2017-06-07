@@ -18,10 +18,6 @@ var bulle: UITextView!
 
 let distanceApresBulleJarvis = 30.0
 let distanceApresBulleUser = 10.0
-let bulleFontSize = 10
-let bulleFontName = "Arial"
-let bulleFontSizeJarvis = 11
-let bulleFontNameJarvis = "Verdana"
 
 let speechSynthesizer = AVSpeechSynthesizer()
 
@@ -68,6 +64,11 @@ public func ReponseAudioDevice(reponse: String){
 
 public func AjouterBulle(jarvis: Bool, bulleText: String, scrollVue: UIScrollView){
     
+    let bulleFontSize = ViewController.fontSize
+    let bulleFontSizeJarvis = ViewController.fontSizeJarvis
+    let bulleFontName = ViewController.fontStyle
+    let bulleFontNameJarvis = ViewController.fontStyleJarvis
+    
     var positionBulleSuivante = 10.0
     if let lastComponent = scrollVue.subviews[scrollVue.subviews.count - 1] as? UITextView{
         if jarvis {
@@ -106,13 +107,13 @@ public func AjouterBulle(jarvis: Bool, bulleText: String, scrollVue: UIScrollVie
     var couleurTexte : UIColor
     if jarvis {
         couleurBulle = UIColor.white
-        policeBulle = bulleFontNameJarvis
-        policeSizeBulle = bulleFontSizeJarvis
+        policeBulle = bulleFontNameJarvis!
+        policeSizeBulle = bulleFontSizeJarvis!
         couleurTexte = UIColor(red: 241/255, green: 23/255, blue: 193/255, alpha: 1)
     } else {
         couleurBulle = UIColor(red: 1/255, green: 144/255, blue: 146/255, alpha: 1)
-        policeBulle = bulleFontName
-        policeSizeBulle = bulleFontSize
+        policeBulle = bulleFontName!
+        policeSizeBulle = bulleFontSize!
         couleurTexte = UIColor.white
     }
     bulle = UITextView()

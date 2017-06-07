@@ -16,6 +16,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     static var portjarvis: String!
     static var audioServeur: Bool!
     static var audioApplication: Bool!
+    static var fontSize: Int!
+    static var fontSizeJarvis: Int!
+    static var fontStyle: String!
+    static var fontStyleJarvis: String!
     
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var scrollVue: UIScrollView!
@@ -83,8 +87,26 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 ViewController.audioServeur = result as! Bool
             }
         }
-        
-        
+        SwiftyPlistManager.shared.getValue(for: "fontSize", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.fontSize = result as! Int
+            }
+        }
+        SwiftyPlistManager.shared.getValue(for: "fontSizeJarvis", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.fontSizeJarvis = result as! Int
+            }
+        }
+        SwiftyPlistManager.shared.getValue(for: "fontStyle", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.fontStyle = result as! String
+            }
+        }
+        SwiftyPlistManager.shared.getValue(for: "fontStyleJarvis", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.fontStyleJarvis = result as! String
+            }
+        }
     }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
