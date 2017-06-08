@@ -15,6 +15,10 @@ class ParametresViewController: UIViewController {
     @IBOutlet weak var portJarvisText: UITextField!
     @IBOutlet weak var swichAudioServeur: UISwitch!
     @IBOutlet weak var swichAudioApplication: UISwitch!
+    @IBOutlet weak var sizeFontBubble: UITextField!
+    @IBOutlet weak var sizeFontBubbleJarvis: UITextField!
+    @IBOutlet weak var sizeFontBubbleStepper: UIStepper!
+    @IBOutlet weak var sizeFontBubbleJarvisStepper: UIStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,10 @@ class ParametresViewController: UIViewController {
         portJarvisText.text = ViewController.portjarvis
         swichAudioServeur.setOn(ViewController.audioServeur, animated: false)
         swichAudioApplication.setOn(ViewController.audioApplication, animated: false)
+        sizeFontBubble.text = String(ViewController.fontSize)
+        sizeFontBubbleJarvis.text = String(ViewController.fontSizeJarvis)
+        sizeFontBubbleStepper.value = Double(ViewController.fontSize)
+        sizeFontBubbleJarvisStepper.value = Double(ViewController.fontSizeJarvis)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +65,18 @@ class ParametresViewController: UIViewController {
             }
         }
        
+    }
+    
+    @IBAction func updateFontSizeBubble(_ sender: UIStepper) {
+        sizeFontBubble.text = String(Int(sender.value))
+        ViewController.fontSize = Int(sender.value)
+        updatePlistParametres(key: "fontSize", valeur: ViewController.fontSize)
+    }
+    
+    @IBAction func updateFontSizeBubbleJarvis(_ sender: UIStepper) {
+        sizeFontBubbleJarvis.text = String(Int(sender.value))
+        ViewController.fontSizeJarvis = Int(sender.value)
+        updatePlistParametres(key: "fontSizeJarvis", valeur: ViewController.fontSizeJarvis)
     }
     
     /*

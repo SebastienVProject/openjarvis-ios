@@ -109,7 +109,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="zVN-4F-l8M">
-                                        <rect key="frame" x="0.0" y="115.5" width="264.5" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="77" width="264.5" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez le numéro du port jarvis-api" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="90f-Vt-M8P">
                                                 <rect key="frame" x="0.0" y="0.0" width="264.5" height="20.5"/>
@@ -129,7 +129,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nmf-XH-tnl">
-                                        <rect key="frame" x="0.0" y="231" width="263.5" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="154.5" width="263.5" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez la clé définie pour jarvis-api" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiT-Au-FwT">
                                                 <rect key="frame" x="0.0" y="0.0" width="263.5" height="20.5"/>
@@ -146,7 +146,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="81e-JV-7uK">
-                                        <rect key="frame" x="0.0" y="356.5" width="323" height="31"/>
+                                        <rect key="frame" x="0.0" y="241.5" width="323" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="activation audio serveur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jg-z2-1jd">
                                                 <rect key="frame" x="0.0" y="5" width="274" height="20.5"/>
@@ -163,7 +163,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0SD-Cn-yNl">
-                                        <rect key="frame" x="0.0" y="472" width="323" height="31"/>
+                                        <rect key="frame" x="0.0" y="318.5" width="323" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="activation audio application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-ot-Wf3">
                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="31"/>
@@ -179,12 +179,66 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="oVX-8c-lxI" userLabel="Stack View police bulle">
+                                        <rect key="frame" x="0.0" y="397" width="323" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taille police bulle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7sy-rz-2um" userLabel="libelle">
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-GW-27f" userLabel="taille police">
+                                                <rect key="frame" x="157.5" y="0.0" width="41" height="29"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="10" maximumValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="WUM-Pn-6sS">
+                                                <rect key="frame" x="229" y="0.0" width="94" height="29"/>
+                                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="updateFontSizeBubble:" destination="Gen-Ns-wrN" eventType="valueChanged" id="e2O-ee-fXm"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="q5v-5s-2Xi" userLabel="Stack View police jarvis">
+                                        <rect key="frame" x="0.0" y="474" width="323" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="taille police jarvis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW1-LU-4am" userLabel="libelle">
+                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5zV-oD-E5X" userLabel="taille police">
+                                                <rect key="frame" x="158.5" y="0.0" width="43" height="29"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="10" maximumValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="mYR-gz-OLC">
+                                                <rect key="frame" x="229" y="0.0" width="94" height="29"/>
+                                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="updateFontSizeBubbleJarvis:" destination="Gen-Ns-wrN" eventType="valueChanged" id="83C-Xy-FZw"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="oVX-8c-lxI" firstAttribute="leading" secondItem="YRQ-13-4yV" secondAttribute="leading" id="10p-t2-gN8"/>
                                     <constraint firstAttribute="trailing" secondItem="81e-JV-7uK" secondAttribute="trailing" id="23e-ty-8Rd"/>
                                     <constraint firstItem="81e-JV-7uK" firstAttribute="leading" secondItem="YRQ-13-4yV" secondAttribute="leading" id="AaK-7e-eEX"/>
                                     <constraint firstAttribute="trailing" secondItem="0SD-Cn-yNl" secondAttribute="trailing" id="COq-A8-msa"/>
+                                    <constraint firstAttribute="trailing" secondItem="q5v-5s-2Xi" secondAttribute="trailing" id="MLm-r3-Y0C"/>
+                                    <constraint firstAttribute="trailing" secondItem="oVX-8c-lxI" secondAttribute="trailing" id="egM-08-yiN"/>
                                     <constraint firstItem="0SD-Cn-yNl" firstAttribute="leading" secondItem="YRQ-13-4yV" secondAttribute="leading" id="itF-DD-3XU"/>
+                                    <constraint firstItem="q5v-5s-2Xi" firstAttribute="leading" secondItem="YRQ-13-4yV" secondAttribute="leading" id="p8g-UQ-xfc"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -198,6 +252,10 @@
                     </view>
                     <connections>
                         <outlet property="portJarvisText" destination="yb2-VS-qam" id="FS0-R3-L13"/>
+                        <outlet property="sizeFontBubble" destination="1Lj-GW-27f" id="8TK-xs-8UB"/>
+                        <outlet property="sizeFontBubbleJarvis" destination="5zV-oD-E5X" id="okg-sB-bI2"/>
+                        <outlet property="sizeFontBubbleJarvisStepper" destination="mYR-gz-OLC" id="KA1-HU-utr"/>
+                        <outlet property="sizeFontBubbleStepper" destination="WUM-Pn-6sS" id="PAn-Cl-nes"/>
                         <outlet property="swichAudioApplication" destination="WSl-o3-j29" id="Mmh-Bz-Xj8"/>
                         <outlet property="swichAudioServeur" destination="fh8-3S-me7" id="HF1-pq-BOR"/>
                         <outlet property="urlJarvisText" destination="P0t-wf-3ou" id="lA5-aN-CIX"/>
