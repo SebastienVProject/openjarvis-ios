@@ -21,9 +21,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     static var fontStyle: String!
     static var fontStyleJarvis: String!
     
+    static var heightContainer: Double!
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var scrollVue: UIScrollView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet var MessageVue: UIView!
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fr-FR"))!
     
@@ -107,6 +111,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 ViewController.fontStyleJarvis = result as! String
             }
         }
+        
+        ViewController.heightContainer = 10
     }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
@@ -115,9 +121,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
             microphoneButton.setTitle("Start Recording", for: .normal)
+            microphoneButton.setImage(UIImage(named: "micro.png"), for: .normal)
         } else {
             startRecording()
             microphoneButton.setTitle("Stop Recording", for: .normal)
+            microphoneButton.setImage(UIImage(named: "microON.png"), for: .normal)
         }
         
         //AjouterBulle(jarvis: true, bulleText: "C'est fait", scrollVue: scrollVue)
@@ -170,7 +178,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 self.recognitionTask = nil
                 
                 self.microphoneButton.isEnabled = true
-                TraiterDemande(bulleText: self.textView.text, scrollVue: self.scrollVue)
+                TraiterDemande(bulleText: self.textView.text, containerVue: self.containerView, scrollVue: self.scrollVue, messageVue: self.MessageVue)
             }
         })
         

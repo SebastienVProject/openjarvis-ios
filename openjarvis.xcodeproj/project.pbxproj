@@ -22,6 +22,8 @@
 		2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E20E1EE45EA000D84B15 /* Main.storyboard */; };
 		2D34E2121EE45EA000D84B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2111EE45EA000D84B15 /* Assets.xcassets */; };
 		2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */; };
+		2DE7DCFE1EEB503F001179A0 /* micro.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7DCFD1EEB503F001179A0 /* micro.png */; };
+		2DE7DD001EEB5348001179A0 /* microON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7DCFF1EEB5348001179A0 /* microON.png */; };
 		DC9FF098A3EE4F552E2E424E /* Pods_openjarvis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		2D34E2141EE45EA000D84B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D34E2161EE45EA000D84B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openjarvis.entitlements; sourceTree = "<group>"; };
+		2DE7DCFD1EEB503F001179A0 /* micro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro.png; sourceTree = "<group>"; };
+		2DE7DCFF1EEB5348001179A0 /* microON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microON.png; sourceTree = "<group>"; };
 		32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openjarvis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis.debug.xcconfig"; sourceTree = "<group>"; };
 		A70BEB95934136C522FC9698 /* Pods-openjarvis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openjarvis.release.xcconfig"; path = "Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis.release.xcconfig"; sourceTree = "<group>"; };
 		B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openjarvis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +83,8 @@
 				2D235BFC1EE4B126003F7F1A /* whiteBulle.png */,
 				2D235BFD1EE4B126003F7F1A /* microphone.png */,
 				2D235BFE1EE4B126003F7F1A /* engrenage.png */,
+				2DE7DCFD1EEB503F001179A0 /* micro.png */,
+				2DE7DCFF1EEB5348001179A0 /* microON.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -198,11 +204,13 @@
 			files = (
 				2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */,
 				2D235C011EE4B126003F7F1A /* iconeOption.png in Resources */,
+				2DE7DCFE1EEB503F001179A0 /* micro.png in Resources */,
 				2D235C0B1EE6004B003F7F1A /* parametres.plist in Resources */,
 				2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */,
 				2D235C041EE4B126003F7F1A /* microphone.png in Resources */,
 				2D235C001EE4B126003F7F1A /* jarvisWhite.png in Resources */,
 				2D34E2121EE45EA000D84B15 /* Assets.xcassets in Resources */,
+				2DE7DD001EEB5348001179A0 /* microON.png in Resources */,
 				2D235C021EE4B126003F7F1A /* blueBulle.png in Resources */,
 				2D235C031EE4B126003F7F1A /* whiteBulle.png in Resources */,
 				2D235C051EE4B126003F7F1A /* engrenage.png in Resources */,
