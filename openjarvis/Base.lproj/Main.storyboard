@@ -161,7 +161,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="facultatif" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKa-mS-jIs">
-                                                <rect key="frame" x="0.0" y="20.5" width="78.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="263.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -170,6 +170,9 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vKa-mS-jIs" firstAttribute="width" secondItem="SiT-Au-FwT" secondAttribute="width" id="lVT-SP-bDf"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="81e-JV-7uK">
                                         <rect key="frame" x="0.0" y="241.5" width="323" height="31"/>
