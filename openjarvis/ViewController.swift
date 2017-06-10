@@ -20,11 +20,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     static var fontSizeJarvis: Int!
     static var fontStyle: String!
     static var fontStyleJarvis: String!
+    static var keyAPIJarvis: String?
     
     static var heightContainer: Double!
     
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var microphoneButton: UIButton!                              
     @IBOutlet weak var scrollVue: UIScrollView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var MessageVue: UIView!
@@ -111,7 +112,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 ViewController.fontStyleJarvis = result as! String
             }
         }
-        
+        SwiftyPlistManager.shared.getValue(for: "keyApiJarvis", fromPlistWithName: "parametres") { (result, err) in
+            if err == nil {
+                ViewController.keyAPIJarvis = result as? String
+            }
+        }
+ 
         ViewController.heightContainer = 10
     }
     

@@ -18,5 +18,7 @@
 	<string>Verdana</string>
 	<key>fontSizeJarvis</key>
 	<integer>12</integer>
+	<key>keyApiJarvis</key>
+	<string></string>
 </dict>
 </plist>

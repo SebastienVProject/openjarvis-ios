@@ -13,6 +13,7 @@ class ParametresViewController: UIViewController {
 
     @IBOutlet weak var urlJarvisText: UITextField!
     @IBOutlet weak var portJarvisText: UITextField!
+    @IBOutlet weak var keyAPIJarvis: UITextField!
     @IBOutlet weak var swichAudioServeur: UISwitch!
     @IBOutlet weak var swichAudioApplication: UISwitch!
     @IBOutlet weak var sizeFontBubble: UITextField!
@@ -31,6 +32,7 @@ class ParametresViewController: UIViewController {
         sizeFontBubbleJarvis.text = String(ViewController.fontSizeJarvis)
         sizeFontBubbleStepper.value = Double(ViewController.fontSize)
         sizeFontBubbleJarvisStepper.value = Double(ViewController.fontSizeJarvis)
+        keyAPIJarvis.text = ViewController.keyAPIJarvis
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +57,11 @@ class ParametresViewController: UIViewController {
     @IBAction func updatePortJarvis(_ sender: UITextField) {
         ViewController.portjarvis = sender.text
         updatePlistParametres(key: "portJarvis", valeur: ViewController.portjarvis)
+    }
+    
+    @IBAction func updateKeyApiJarvis(_ sender: UITextField) {
+        ViewController.keyAPIJarvis = sender.text
+        updatePlistParametres(key: "keyApiJarvis", valeur: ViewController.keyAPIJarvis ?? "")
     }
     
     func updatePlistParametres(key: String, valeur: Any){

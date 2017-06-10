@@ -165,6 +165,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="updateKeyApiJarvis:" destination="Gen-Ns-wrN" eventType="editingDidEnd" id="Dl9-fH-BMS"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -274,6 +277,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="keyAPIJarvis" destination="vKa-mS-jIs" id="LPq-0z-ks6"/>
                         <outlet property="portJarvisText" destination="yb2-VS-qam" id="FS0-R3-L13"/>
                         <outlet property="sizeFontBubble" destination="1Lj-GW-27f" id="8TK-xs-8UB"/>
                         <outlet property="sizeFontBubbleJarvis" destination="5zV-oD-E5X" id="okg-sB-bI2"/>

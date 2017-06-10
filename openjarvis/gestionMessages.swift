@@ -25,11 +25,17 @@ public func TraiterDemande(bulleText: String, containerVue: UIView, scrollVue: U
     AjouterBulle(jarvis: false, bulleText: bulleText, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
     
     let URL_GET = ViewController.urljarvis + ":" + ViewController.portjarvis + "/get"
-    var PARAMS : Parameters
+    var PARAMS : Parameters = [:]
+    PARAMS["order"] = bulleText
     if !ViewController.audioServeur {
-        PARAMS = ["order": bulleText, "mute": "true"]
+        PARAMS["mute"] = "true"
     } else {
-        PARAMS = ["order": bulleText, "mute": "false"]
+        PARAMS["mute"] = "false"
+    }
+    if let keyApiJarvis = ViewController.keyAPIJarvis {
+        if !(keyApiJarvis.isEmpty) {
+            PARAMS["key"] = ViewController.keyAPIJarvis
+        }
     }
     print(URL_GET)
     print(PARAMS)
