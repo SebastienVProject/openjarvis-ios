@@ -24,6 +24,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     static var heightContainer: Double!
     
+    @IBOutlet weak var imageJarvis: UIImageView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var microphoneButton: UIButton!                              
     @IBOutlet weak var scrollVue: UIScrollView!
@@ -119,7 +120,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
  
         ViewController.heightContainer = 10
-    }
+        /*
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = imageJarvis.bounds
+        imageJarvis.addSubview(blurEffectView)
+        */
+ }
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {
@@ -201,7 +208,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             print("audioEngine couldn't start because of an error.")
         }
         
-        textView.text = "Say something, I'm listening!"
+        textView.text = ""
         
     }
     

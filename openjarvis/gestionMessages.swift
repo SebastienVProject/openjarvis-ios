@@ -22,40 +22,42 @@ let distanceApresBulleUser = 10.0
 let speechSynthesizer = AVSpeechSynthesizer()
 
 public func TraiterDemande(bulleText: String, containerVue: UIView, scrollVue: UIScrollView, messageVue: UIView){
-    AjouterBulle(jarvis: false, bulleText: bulleText, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
-    
-    let URL_GET = ViewController.urljarvis + ":" + ViewController.portjarvis + "/get"
-    var PARAMS : Parameters = [:]
-    PARAMS["order"] = bulleText
-    if !ViewController.audioServeur {
-        PARAMS["mute"] = "true"
-    } else {
-        PARAMS["mute"] = "false"
-    }
-    if let keyApiJarvis = ViewController.keyAPIJarvis {
-        if !(keyApiJarvis.isEmpty) {
-            PARAMS["key"] = ViewController.keyAPIJarvis
-        }
-    }
-    print(URL_GET)
-    print(PARAMS)
-    
-    Alamofire.request(URL_GET, parameters: PARAMS).responseJSON { response in
+    if !bulleText.isEmpty {
+        AjouterBulle(jarvis: false, bulleText: bulleText, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
         
-        if response.result.isSuccess {
-            if let retour = response.result.value as? NSArray
-            {
-                let JSON = retour[0] as! NSDictionary
-                if let answer = JSON["answer"]{
-                    AjouterBulle(jarvis: true, bulleText: answer as! String, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
-                    if ViewController.audioApplication {
-                        ReponseAudioDevice(reponse: answer as! String)
+        let URL_GET = ViewController.urljarvis + ":" + ViewController.portjarvis + "/get"
+        var PARAMS : Parameters = [:]
+        PARAMS["order"] = bulleText
+        if !ViewController.audioServeur {
+            PARAMS["mute"] = "true"
+        } else {
+            PARAMS["mute"] = "false"
+        }
+        if let keyApiJarvis = ViewController.keyAPIJarvis {
+            if !(keyApiJarvis.isEmpty) {
+                PARAMS["key"] = ViewController.keyAPIJarvis
+            }
+        }
+        print(URL_GET)
+        print(PARAMS)
+        
+        Alamofire.request(URL_GET, parameters: PARAMS).responseJSON { response in
+            
+            if response.result.isSuccess {
+                if let retour = response.result.value as? NSArray
+                {
+                    let JSON = retour[0] as! NSDictionary
+                    if let answer = JSON["answer"]{
+                        AjouterBulle(jarvis: true, bulleText: answer as! String, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
+                        if ViewController.audioApplication {
+                            ReponseAudioDevice(reponse: answer as! String)
+                        }
                     }
                 }
+            } else {
+                print("Requete invalide")
+                print (response)
             }
-        } else {
-            print("Requete invalide")
-            print (response)
         }
     }
 }
@@ -93,23 +95,23 @@ public func AjouterBulle(jarvis: Bool, bulleText: String, containerVue: UIView, 
         }
     }
     
-    let bulleLargeur : Double = (Double(UIScreen.main.bounds.size.width)*60.0)/100.0
+    let bulleLargeur : Double = (Double(UIScreen.main.bounds.size.width)*70.0)/100.0
     var bulleLeft : Double
     if jarvis {
-        bulleLeft = 42.0
+        bulleLeft = 45.0
     } else {
-        bulleLeft = Double(UIScreen.main.bounds.size.width) - bulleLargeur - 40
+        bulleLeft = Double(UIScreen.main.bounds.size.width) - bulleLargeur - 25
     }
     
     //gestion de l'avatar
     if jarvis {
         imageJarvis = UIImageView(image: UIImage(named: "jarvisWhite.png"))
-        imageJarvis.frame = CGRect(x: 0, y: positionBulleSuivante, width: 47, height: 48)
+        imageJarvis.frame = CGRect(x: 3, y: positionBulleSuivante, width: 47, height: 48)
         //self.view.addSubview
         containerVue.addSubview(imageJarvis)
     } else {
         imageJarvis = UIImageView(image: UIImage(named: "blueBulle.png"))
-        imageJarvis.frame = CGRect(x: Double(UIScreen.main.bounds.size.width) - 45, y: positionBulleSuivante, width: 8, height: 14)
+        imageJarvis.frame = CGRect(x: Double(UIScreen.main.bounds.size.width) - 30, y: positionBulleSuivante, width: 8, height: 14)
         containerVue.addSubview(imageJarvis)
     }
     
@@ -138,6 +140,7 @@ public func AjouterBulle(jarvis: Bool, bulleText: String, containerVue: UIView, 
     bulle.font = UIFont(name: policeBulle, size: CGFloat(policeSizeBulle))
     bulle.text = bulleText
     bulle.frame = CGRect(x: bulleLeft, y: positionBulleSuivante, width: bulleLargeur, height: 80.0)
+    bulle.isScrollEnabled = false
     
     //ajustement de la hauteur de la bulle en fonction de son contenu
     let fixedWidth = bulle.frame.size.width

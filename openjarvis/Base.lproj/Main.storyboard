@@ -51,6 +51,10 @@
                                     <constraint firstAttribute="bottom" secondItem="yL2-dH-4eS" secondAttribute="bottom" constant="415" id="pCo-dx-Pam"/>
                                 </constraints>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jarvisIcon" highlightedImage="jarvisIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-e6-kNf">
+                                <rect key="frame" x="0.0" y="72" width="375" height="523"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhn-aK-v7w">
                                 <rect key="frame" x="175" y="607" width="25" height="50"/>
                                 <constraints>
@@ -87,6 +91,7 @@
                     <connections>
                         <outlet property="MessageVue" destination="8bC-Xf-vdC" id="vS4-z3-Cfq"/>
                         <outlet property="containerView" destination="yL2-dH-4eS" id="4Ag-99-erL"/>
+                        <outlet property="imageJarvis" destination="6v0-e6-kNf" id="SgG-Vs-aXg"/>
                         <outlet property="microphoneButton" destination="xhn-aK-v7w" id="VF7-co-9bz"/>
                         <outlet property="scrollVue" destination="FGz-0v-Kyy" id="EUN-cK-9Cg"/>
                         <outlet property="textView" destination="Mmy-d9-woF" id="Did-gT-j2U"/>
@@ -318,6 +323,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="jarvisIcon" width="102" height="129"/>
         <image name="micro.png" width="50" height="100"/>
     </resources>
 </document>
