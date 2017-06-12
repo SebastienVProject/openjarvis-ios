@@ -87,6 +87,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="openJarvis" id="kuk-be-FIe">
                         <barButtonItem key="rightBarButtonItem" title="paramètres" id="Ago-0t-h8j">
+                            <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Gen-Ns-wrN" kind="show" id="ij9-8A-yAy"/>
                             </connections>
@@ -117,6 +118,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jarvisIcon" highlightedImage="jarvisIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pR8-5P-HQ1" userLabel="Image Jarvis">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="YRQ-13-4yV">
                                 <rect key="frame" x="26" y="114" width="323" height="503"/>
                                 <subviews>
@@ -286,12 +291,17 @@
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="YRQ-13-4yV" secondAttribute="trailing" constant="10" id="BIj-LN-Y0Q"/>
+                            <constraint firstItem="pR8-5P-HQ1" firstAttribute="height" secondItem="1Yu-Xz-xjj" secondAttribute="height" id="BOM-aK-EkP"/>
+                            <constraint firstItem="pR8-5P-HQ1" firstAttribute="width" secondItem="1Yu-Xz-xjj" secondAttribute="width" id="SDV-vB-jEf"/>
+                            <constraint firstItem="pR8-5P-HQ1" firstAttribute="leading" secondItem="1Yu-Xz-xjj" secondAttribute="leading" id="VJf-a7-M1j"/>
                             <constraint firstItem="YRQ-13-4yV" firstAttribute="top" secondItem="g9l-zM-Iwc" secondAttribute="bottom" constant="50" id="W0c-q3-K4o"/>
+                            <constraint firstItem="pR8-5P-HQ1" firstAttribute="bottom" secondItem="Jjq-cb-dtd" secondAttribute="top" id="YIP-m5-r1K"/>
                             <constraint firstItem="Jjq-cb-dtd" firstAttribute="top" secondItem="YRQ-13-4yV" secondAttribute="bottom" constant="50" id="Z9u-KK-S4C"/>
                             <constraint firstItem="YRQ-13-4yV" firstAttribute="leading" secondItem="1Yu-Xz-xjj" secondAttribute="leadingMargin" constant="10" id="eKj-T9-UXG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageJarvisParam" destination="pR8-5P-HQ1" id="J18-97-Bcj"/>
                         <outlet property="keyAPIJarvis" destination="vKa-mS-jIs" id="LPq-0z-ks6"/>
                         <outlet property="portJarvisText" destination="yb2-VS-qam" id="FS0-R3-L13"/>
                         <outlet property="sizeFontBubble" destination="1Lj-GW-27f" id="8TK-xs-8UB"/>
@@ -312,9 +322,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tq7-xS-b4U" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kPf-g8-LEc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kPf-g8-LEc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -20,6 +20,7 @@ class ParametresViewController: UIViewController {
     @IBOutlet weak var sizeFontBubbleJarvis: UITextField!
     @IBOutlet weak var sizeFontBubbleStepper: UIStepper!
     @IBOutlet weak var sizeFontBubbleJarvisStepper: UIStepper!
+    @IBOutlet weak var imageJarvisParam: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,13 @@ class ParametresViewController: UIViewController {
         sizeFontBubbleStepper.value = Double(ViewController.fontSize)
         sizeFontBubbleJarvisStepper.value = Double(ViewController.fontSizeJarvis)
         keyAPIJarvis.text = ViewController.keyAPIJarvis
+        
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = imageJarvisParam.bounds
+        imageJarvisParam.addSubview(blurEffectView)
+ 
     }
 
     override func didReceiveMemoryWarning() {
