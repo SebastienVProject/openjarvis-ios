@@ -141,6 +141,7 @@ public func AjouterBulle(jarvis: Bool, bulleText: String, containerVue: UIView, 
     bulle.text = bulleText
     bulle.frame = CGRect(x: bulleLeft, y: positionBulleSuivante, width: bulleLargeur, height: 80.0)
     bulle.isScrollEnabled = false
+    bulle.isEditable = false
     
     //ajustement de la hauteur de la bulle en fonction de son contenu
     let fixedWidth = bulle.frame.size.width

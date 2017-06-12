@@ -25,11 +25,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     static var heightContainer: Double!
     
     @IBOutlet weak var imageJarvis: UIImageView!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var microphoneButton: UIButton!                              
+    @IBOutlet var containerView: UIView!
+    @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var scrollVue: UIScrollView!
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet var MessageVue: UIView!
+    @IBOutlet weak var MessageVue: UIView!
+    
+    var HandleDeleteAllBubble: ((UIAlertAction?) -> Void)!
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fr-FR"))!
     
@@ -118,15 +120,45 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 ViewController.keyAPIJarvis = result as? String
             }
         }
- 
+        
         ViewController.heightContainer = 10
         /*
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = imageJarvis.bounds
-        imageJarvis.addSubview(blurEffectView)
-        */
- }
+         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+         let blurEffectView = UIVisualEffectView(effect: blurEffect)
+         blurEffectView.frame = imageJarvis.bounds
+         imageJarvis.addSubview(blurEffectView)
+         */
+        
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.handleLongPress(_:)))
+        lpgr.minimumPressDuration = 1.2
+        scrollVue.addGestureRecognizer(lpgr)
+        
+        HandleDeleteAllBubble = { (action: UIAlertAction!) -> Void in
+            while self.containerView.subviews.count > 0 {
+                self.containerView.subviews.first?.removeFromSuperview()
+            }
+            ViewController.heightContainer = 10
+        }
+    }
+    
+    func handleLongPress(_ gesture: UILongPressGestureRecognizer){
+        if gesture.state != .began { return }
+        let alert = UIAlertController(title: "Supprimer l'historique", message: "Merci à vous de confirmer la suppression de l'historique", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: HandleDeleteAllBubble))
+        alert.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        //showPopup(sender: cell, mode: "edit", text: todoList[row], row: row)
+    }
+
+
+    
+
+    /*
+    @IBAction func purgeTapped(_ sender: AnyObject) {
+       /*  while containerView.subviews.count > 0 {
+            containerView.subviews.first?.removeFromSuperview()
+        }*/
+    }*/
     
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {
@@ -143,7 +175,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         //AjouterBulle(jarvis: true, bulleText: "C'est fait", scrollVue: scrollVue)
     }
-
+    
     func startRecording() {
         
         if recognitionTask != nil {
