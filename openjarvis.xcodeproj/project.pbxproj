@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D03266B1EEEAEB100EFB2E6 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D03266A1EEEAEB100EFB2E6 /* HelpViewController.swift */; };
 		2D235BF61EE4AFFB003F7F1A /* gestionMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */; };
 		2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BF81EE4B126003F7F1A /* jarvis.png */; };
 		2D235C001EE4B126003F7F1A /* jarvisWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D235BF91EE4B126003F7F1A /* jarvisWhite.png */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D03266A1EEEAEB100EFB2E6 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gestionMessages.swift; sourceTree = "<group>"; };
 		2D235BF81EE4B126003F7F1A /* jarvis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jarvis.png; sourceTree = "<group>"; };
 		2D235BF91EE4B126003F7F1A /* jarvisWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jarvisWhite.png; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */,
 				2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */,
 				2D34E20C1EE45EA000D84B15 /* ViewController.swift */,
+				2D03266A1EEEAEB100EFB2E6 /* HelpViewController.swift */,
 				2D235C091EE5EEA6003F7F1A /* ParametresViewController.swift */,
 				2D235BF51EE4AFFB003F7F1A /* gestionMessages.swift */,
 				2D34E20E1EE45EA000D84B15 /* Main.storyboard */,
@@ -277,6 +280,7 @@
 				2D34E20D1EE45EA000D84B15 /* ViewController.swift in Sources */,
 				2D235BF61EE4AFFB003F7F1A /* gestionMessages.swift in Sources */,
 				2D34E20B1EE45EA000D84B15 /* AppDelegate.swift in Sources */,
+				2D03266B1EEEAEB100EFB2E6 /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

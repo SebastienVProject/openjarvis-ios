@@ -151,8 +151,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
 
 
-    
-
     /*
     @IBAction func purgeTapped(_ sender: AnyObject) {
        /*  while containerView.subviews.count > 0 {
