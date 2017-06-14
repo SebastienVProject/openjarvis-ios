@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
 
@@ -15,6 +16,8 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     @IBOutlet weak var textViewMessage: UITextView!
     @IBOutlet weak var textFieldEmail: UITextField!
+    
+    var pickerText: String!
     
     var pickerDataSource = ["Question", "Encouragement", "Evolution", "Bug"]
     var emailSaisiOK: Bool = false
@@ -25,13 +28,22 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         pickerViewType.dataSource = self
         pickerViewType.delegate = self
         textViewMessage.delegate = self
+        
+        pickerText = pickerDataSource[0]
 
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = imageJarvisHelp.bounds
         imageJarvisHelp.addSubview(blurEffectView)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HelpViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,14 +62,11 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         return pickerDataSource[row]
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        self.view.endEditing(true)
-        
-        return true
-        
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerText = pickerDataSource[row]
     }
     
+  
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
             textView.resignFirstResponder()
@@ -73,7 +82,63 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     @IBAction func ValidationFormulaire(_ sender: UIButton) {
-        emailSaisiOK = isValidEmail(emailSaisi: textFieldEmail.text!)
+        
+        let emailOK: Bool = isValidEmail(emailSaisi: textFieldEmail.text!)
+        let msgOK: Bool = !textViewMessage.text.isEmpty
+        
+        if emailOK && msgOK {
+            var message = textViewMessage.text + "\n\n" + "(Message provenant de l'application openjarvis-ios"
+            if !((textFieldEmail.text?.isEmpty)!) {
+                message += ", et laissé par l'utilisateur suivant: " + textFieldEmail.text! + ")"
+            }
+            else {
+                message += ")"
+            }
+            
+            let titre = "openjarvis-ios - " + pickerText + " - "
+            
+            CreateIssue(titleIssue: titre, bodyIssue: message, typeIssue: pickerText)
+        }
+        else {
+            if !emailOK {
+                let alert = UIAlertController(title: "Saisir un email valide", message: "Merci à vous de saisir au préalable un email valide", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            else {
+                let alert = UIAlertController(title: "Saisir votre message", message: "Merci à vous de saisir au préalable un message", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func CreateIssue(titleIssue: String, bodyIssue: String, typeIssue: String) {
+        let URL_POST = "https://api.github.com/repos/SebastienVProject/openjarvis-ios/issues"
+        
+        var headers: HTTPHeaders = [:]
+        headers["Authorization"] = "token 36422879102eb5fd3388e580bf051445d831e086"
+        
+        var PARAMS : Parameters = [:]
+        PARAMS["title"] = titleIssue
+        PARAMS["body"] = bodyIssue
+        PARAMS["labels"] = [typeIssue]
+        
+        Alamofire.request(URL_POST, method: .post, parameters: PARAMS, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            
+            switch response.result {
+            case .success:
+                self.textFieldEmail.text=""
+                self.textViewMessage.text=""
+                let alert = UIAlertController(title: "Message envoyé", message: "Message envoyé avec succès.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
     /*
     // MARK: - Navigation
