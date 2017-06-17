@@ -113,6 +113,17 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         return true
     }
     
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        let magnitude = (globalView.frame.height / 3) - textView.bounds.maxY - textView.frame.origin.y - (textView.superview?.frame.origin.y)!
+        globalView.transform = CGAffineTransform(translationX: 0, y: magnitude)
+        
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        globalView.transform = CGAffineTransform.identity
+    }
+    
     func isValidEmail(emailSaisi:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
