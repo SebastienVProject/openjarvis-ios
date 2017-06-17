@@ -65,7 +65,7 @@ public func TraiterDemande(bulleText: String, containerVue: UIView, scrollVue: U
 public func ReponseAudioDevice(reponse: String){
     
     let speechUtterance = AVSpeechUtterance(string: reponse)
-    speechUtterance.voice=AVSpeechSynthesisVoice(language: "fr-FR")
+    speechUtterance.voice=AVSpeechSynthesisVoice(language: NSLocalizedString("codeLangue", comment: "code langue"))
     speechUtterance.volume = 10
     speechSynthesizer.speak(speechUtterance)
 }

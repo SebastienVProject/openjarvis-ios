@@ -20,7 +20,19 @@ class ParametresViewController: UIViewController {
     @IBOutlet weak var sizeFontBubbleJarvis: UITextField!
     @IBOutlet weak var sizeFontBubbleStepper: UIStepper!
     @IBOutlet weak var sizeFontBubbleJarvisStepper: UIStepper!
+
+    @IBOutlet weak var taillePoliceText: UITextField!
+    @IBOutlet weak var taillePoliceJarvisText: UITextField!
+    
+    @IBOutlet weak var labelUrl: UILabel!
+    @IBOutlet weak var labelPort: UILabel!
+    @IBOutlet weak var labelAPIKey: UILabel!
+    @IBOutlet weak var labelAudioServer: UILabel!
+    @IBOutlet weak var labelAudioApplication: UILabel!
+    @IBOutlet weak var labelFont: UILabel!
+    @IBOutlet weak var labelFontJarvis: UILabel!
     @IBOutlet weak var imageJarvisParam: UIImageView!
+    @IBOutlet var GlobalView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +47,36 @@ class ParametresViewController: UIViewController {
         sizeFontBubbleJarvisStepper.value = Double(ViewController.fontSizeJarvis)
         keyAPIJarvis.text = ViewController.keyAPIJarvis
         
+        labelUrl.text = NSLocalizedString("ParamLabelUrl", comment: "Enter URL")
+        labelPort.text = NSLocalizedString("ParamLabelPort", comment: "Enter port number")
+        labelAPIKey.text = NSLocalizedString("ParamLabelAPIKey", comment: "Enter API Key for Jarvis")
+        labelAudioServer.text = NSLocalizedString("ParamLabelAudioServeur", comment: "enabling audio on the server")
+        labelAudioApplication.text = NSLocalizedString("ParamLabelAudioAppli", comment: "enabling audio in the application")
+        labelFont.text = NSLocalizedString("ParamFont", comment: "font size in the bubble")
+        labelFontJarvis.text = NSLocalizedString("ParamFontJarvis", comment: "font size in the jarvis bubble")
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = imageJarvisParam.bounds
+        blurEffectView.frame = GlobalView.bounds
         imageJarvisParam.addSubview(blurEffectView)
- 
+        
+        if UIDevice.current.model == "iPad" {
+            //on adapte la taille de police au format tablette
+            let ajustement: CGFloat = 10
+            labelUrl.font = labelUrl.font.withSize(labelUrl.font.pointSize + ajustement)
+            labelPort.font = labelPort.font.withSize(labelPort.font.pointSize + ajustement)
+            labelAPIKey.font = labelAPIKey.font.withSize(labelAPIKey.font.pointSize + ajustement)
+            labelAudioServer.font = labelAudioServer.font.withSize(labelAudioServer.font.pointSize + ajustement)
+            labelAudioApplication.font = labelAudioApplication.font.withSize(labelAudioApplication.font.pointSize + ajustement)
+            labelFont.font = labelFont.font.withSize(labelFont.font.pointSize + ajustement)
+            labelFontJarvis.font = labelFontJarvis.font.withSize(labelFontJarvis.font.pointSize + ajustement)
+            
+            urlJarvisText.font = urlJarvisText.font?.withSize((urlJarvisText.font?.pointSize)! + ajustement)
+            portJarvisText.font = portJarvisText.font?.withSize((portJarvisText.font?.pointSize)! + ajustement)
+            keyAPIJarvis.font = keyAPIJarvis.font?.withSize((keyAPIJarvis.font?.pointSize)! + ajustement)
+            taillePoliceText.font = taillePoliceText.font?.withSize((taillePoliceText.font?.pointSize)! + ajustement)
+            taillePoliceJarvisText.font = taillePoliceJarvisText.font?.withSize((taillePoliceJarvisText.font?.pointSize)! + ajustement)
+        }
     }
 
     override func didReceiveMemoryWarning() {

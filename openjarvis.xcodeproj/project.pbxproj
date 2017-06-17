@@ -23,6 +23,8 @@
 		2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E20E1EE45EA000D84B15 /* Main.storyboard */; };
 		2D34E2121EE45EA000D84B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2111EE45EA000D84B15 /* Assets.xcassets */; };
 		2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */; };
+		2DCB57491EF29FB000D59B08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB574B1EF29FB000D59B08 /* Localizable.strings */; };
+		2DCB574E1EF29FB100D59B08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB57501EF29FB100D59B08 /* InfoPlist.strings */; };
 		2DE7DCFE1EEB503F001179A0 /* micro.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7DCFD1EEB503F001179A0 /* micro.png */; };
 		2DE7DD001EEB5348001179A0 /* microON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7DCFF1EEB5348001179A0 /* microON.png */; };
 		DC9FF098A3EE4F552E2E424E /* Pods_openjarvis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */; };
@@ -48,6 +50,14 @@
 		2D34E2141EE45EA000D84B15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D34E2161EE45EA000D84B15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openjarvis.entitlements; sourceTree = "<group>"; };
+		2DCB57461EF29FAB00D59B08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2DCB574A1EF29FB000D59B08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2DCB574F1EF29FB100D59B08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DCB57511EF29FB200D59B08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		2DCB57521EF2A26100D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2DCB57531EF2A26200D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2DCB57541EF2A26200D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2DCB57551EF2A26300D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/Main.strings"; sourceTree = "<group>"; };
 		2DE7DCFD1EEB503F001179A0 /* micro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro.png; sourceTree = "<group>"; };
 		2DE7DCFF1EEB5348001179A0 /* microON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microON.png; sourceTree = "<group>"; };
 		32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openjarvis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +122,8 @@
 		2D34E2091EE45EA000D84B15 /* openjarvis */ = {
 			isa = PBXGroup;
 			children = (
+				2DCB57501EF29FB100D59B08 /* InfoPlist.strings */,
+				2DCB574B1EF29FB000D59B08 /* Localizable.strings */,
 				2D34E21C1EE4671400D84B15 /* openjarvis.entitlements */,
 				2D34E20A1EE45EA000D84B15 /* AppDelegate.swift */,
 				2D34E20C1EE45EA000D84B15 /* ViewController.swift */,
@@ -208,6 +220,8 @@
 				2D235BFF1EE4B126003F7F1A /* jarvis.png in Resources */,
 				2D235C011EE4B126003F7F1A /* iconeOption.png in Resources */,
 				2DE7DCFE1EEB503F001179A0 /* micro.png in Resources */,
+				2DCB57491EF29FB000D59B08 /* Localizable.strings in Resources */,
+				2DCB574E1EF29FB100D59B08 /* InfoPlist.strings in Resources */,
 				2D235C0B1EE6004B003F7F1A /* parametres.plist in Resources */,
 				2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */,
 				2D235C041EE4B126003F7F1A /* microphone.png in Resources */,
@@ -291,6 +305,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D34E20F1EE45EA000D84B15 /* Base */,
+				2DCB57511EF29FB200D59B08 /* en */,
+				2DCB57551EF2A26300D59B08 /* fr-FR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -299,8 +315,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D34E2141EE45EA000D84B15 /* Base */,
+				2DCB57461EF29FAB00D59B08 /* en */,
+				2DCB57521EF2A26100D59B08 /* fr-FR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2DCB574B1EF29FB000D59B08 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DCB574A1EF29FB000D59B08 /* en */,
+				2DCB57531EF2A26200D59B08 /* fr-FR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2DCB57501EF29FB100D59B08 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DCB574F1EF29FB100D59B08 /* en */,
+				2DCB57541EF2A26200D59B08 /* fr-FR */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -31,9 +31,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var MessageVue: UIView!
     
+    @IBOutlet weak var labelMenuHelp: UIBarButtonItem!
+    @IBOutlet weak var labelMenuParameter: UIBarButtonItem!
+    
     var HandleDeleteAllBubble: ((UIAlertAction?) -> Void)!
     
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "fr-FR"))!
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: NSLocalizedString("codeLangue", comment: "Language code for speech recognizer")))!
     
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
@@ -43,6 +46,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        labelMenuHelp.title = NSLocalizedString("labelMenuHelp", comment: "Help label")
+        labelMenuParameter.title = NSLocalizedString("labelMenuParameter", comment: "Parameter label")
         
         microphoneButton.isEnabled = false
         
@@ -143,21 +149,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     func handleLongPress(_ gesture: UILongPressGestureRecognizer){
         if gesture.state != .began { return }
-        let alert = UIAlertController(title: "Supprimer l'historique", message: "Merci à vous de confirmer la suppression de l'historique", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: HandleDeleteAllBubble))
-        alert.addAction(UIAlertAction(title: "Annuler", style: UIAlertActionStyle.cancel, handler: nil))
+        let alert = UIAlertController(title: NSLocalizedString("deletePopupTitle", comment: "title of the popup to delete conversation"), message: NSLocalizedString("deletePopupMessage", comment: "message of the popup to delete conversation"), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("actionDelete", comment: "Delete action"), style: UIAlertActionStyle.destructive, handler: HandleDeleteAllBubble))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("actionCancel", comment: "Cancel action"), style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        //showPopup(sender: cell, mode: "edit", text: todoList[row], row: row)
     }
 
-
-    /*
-    @IBAction func purgeTapped(_ sender: AnyObject) {
-       /*  while containerView.subviews.count > 0 {
-            containerView.subviews.first?.removeFromSuperview()
-        }*/
-    }*/
-    
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {
             audioEngine.stop()
@@ -170,8 +167,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             microphoneButton.setTitle("Stop Recording", for: .normal)
             microphoneButton.setImage(UIImage(named: "microON.png"), for: .normal)
         }
-        
-        //AjouterBulle(jarvis: true, bulleText: "C'est fait", scrollVue: scrollVue)
     }
     
     func startRecording() {
