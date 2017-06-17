@@ -38,12 +38,12 @@ public func TraiterDemande(bulleText: String, containerVue: UIView, scrollVue: U
                 PARAMS["key"] = ViewController.keyAPIJarvis
             }
         }
-        print(URL_GET)
-        print(PARAMS)
-        
+  
+        var reponseJarvisOK: Bool = false
         Alamofire.request(URL_GET, parameters: PARAMS).responseJSON { response in
             
             if response.result.isSuccess {
+                reponseJarvisOK = true
                 if let retour = response.result.value as? NSArray
                 {
                     let JSON = retour[0] as! NSDictionary
@@ -56,8 +56,11 @@ public func TraiterDemande(bulleText: String, containerVue: UIView, scrollVue: U
                 }
             } else {
                 print("Requete invalide")
-                print (response)
             }
+        }
+        if !reponseJarvisOK {
+            //pas de wifi - requete KO
+            AjouterBulle(jarvis: true, bulleText: NSLocalizedString("technicalError", comment: "Technical error"), containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
         }
     }
 }
@@ -162,10 +165,6 @@ public func AjouterBulle(jarvis: Bool, bulleText: String, containerVue: UIView, 
     scrollVue.contentSize = containerVue.frame.size    
 
     let ecartY = containerVue.frame.size.height - messageVue.frame.size.height
-
-    print("containerVue.frame.size.height=\(containerVue.frame.size.height)")
-    print("messageVue.frame.size.height=\(messageVue.frame.size.height)")
-    print("ecartY=\(ecartY)")
 
     if ecartY > 0 {
         let scrollPoint = CGPoint(x: 0, y: ecartY+40)

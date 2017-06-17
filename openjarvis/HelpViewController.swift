@@ -49,8 +49,6 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
         blurEffectView.frame = globalView.bounds
         imageJarvisHelp.addSubview(blurEffectView)
-        print(blurEffectView.frame)
-        print(globalView.frame)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HelpViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -67,15 +65,12 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
         blurEffectView.frame = globalView.bounds
         imageJarvisHelp.addSubview(blurEffectView)
-        print("rotated")
-        print(blurEffectView.frame)
-        print(globalView.frame)
         
-        if UIDevice.current.orientation.isPortrait {
-            print ("portrait")
-        } else {
-            print("landscape")
-        }
+//        if UIDevice.current.orientation.isPortrait {
+//            //print ("portrait")
+//        } else {
+//            //print("landscape")
+//        }
     }
     
     func dismissKeyboard() {

@@ -7,17 +7,17 @@
 	<key>audioServeur</key>
 	<false/>
 	<key>urlJarvis</key>
-	<string>http://192.168.0.14</string>
+	<string>http://192.168.xx.xx</string>
 	<key>portJarvis</key>
 	<string>8080</string>
 	<key>fontStyle</key>
 	<string>Arial</string>
 	<key>fontSize</key>
-	<integer>11</integer>
+	<integer>13</integer>
 	<key>fontStyleJarvis</key>
 	<string>Verdana</string>
 	<key>fontSizeJarvis</key>
-	<integer>12</integer>
+	<integer>13</integer>
 	<key>keyApiJarvis</key>
 	<string></string>
 </dict>

@@ -1,71 +1,71 @@
 /* font size in the bubble */
-"ParamFont" = "bubble font size";
+"ParamFont" = "Taille police bulle";
 
 /* font size in the jarvis bubble */
-"ParamFontJarvis" = "jarvis bubble font size";
+"ParamFontJarvis" = "Taille police jarvis";
 
 /* Enter API Key for Jarvis */
-"ParamLabelAPIKey" = "Enter the key for jarvis-api";
+"ParamLabelAPIKey" = "Clé de sécurité jarvis-api (facultatif)";
 
 /* enabling audio in the application */
-"ParamLabelAudioAppli" = "enabling audio in the application";
+"ParamLabelAudioAppli" = "activer l'audio dans l'application";
 
 /* enabling audio on the server */
-"ParamLabelAudioServeur" = "enabling audio on the server";
+"ParamLabelAudioServeur" = "activer l'audio sur le serveur";
 
 /* Enter port number */
-"ParamLabelPort" = "Enter port number";
+"ParamLabelPort" = "Numéro de port";
 
 /* Enter URL */
-"ParamLabelUrl" = "Enter URL";
+"ParamLabelUrl" = "URL";
 
 /* Cancel action */
-"actionCancel" = "Cancel action";
+"actionCancel" = "Annuler";
 
 /* Delete action */
-"actionDelete" = "Delete action";
+"actionDelete" = "Supprimer";
 
 /* language code
  Language code for speech recognizer */
-"codeLangue" = "en";
+"codeLangue" = "fr-FR";
 
 /* message of the popup to delete conversation */
-"deletePopupMessage" = "Thanks to you for confirming the deletion of the history of the conversations";
+"deletePopupMessage" = "Merci à vous de confirmer la suppression de l'historique";
 
 /* title of the popup to delete conversation */
-"deletePopupTitle" = "Delete conversation";
+"deletePopupTitle" = "Supprimer l'historique";
 
 /* Message from the openjarvis-ios application */
-"gitIssueMessage" = "(Message from the openjarvis-ios application";
+"gitIssueMessage" = "(Message provenant de l'application openjarvis-ios";
 
 /* User in message */
-"gitIssueUser" = ", and left by the following user: ";
+"gitIssueUser" = ", et laissé par l'utilisateur suivant: ";
 
 /* send your message */
-"helpButtonLabel" = "Send your message";
+"helpButtonLabel" = "Envoyer le message";
 
 /* Conclusion text on the help screen */
-"helpConclusion" = "- Click on the microphone, then save your request.
-- Click again to stop the recording
-- read / listen to the answer made by openjarvis. Think beforehand to fill in the parameters.";
+"helpConclusion" = "Cliquer sur le micro, puis enregistrez votre demande. Cliquer une nouvelle fois pour stopper l'enregistrement, pui lire et/ou écouter la réponse faite par openjarvis.
+
+Penser au préalable à paramétrer l'url et le port du serveur sur lequel openjarvis est installé. Indiquer également la sortie audio souhaitée.";
 
 /* Introductory text on the help screen */
-"helpIntroduction" = "For any question, or encouragement, or request of evolution, or bug detected, do not hesitate to contact the author by filling the form below:";
+"helpIntroduction" = "Pour toute question, ou encouragement, ou demande d'évolution, ou bug détecté, n'hésitez pas à contacter l'auteur en remplissant le formulaire ci-dessous:";
 
 /* your email */
-"helpLabelEmail" = "your email";
+"helpLabelEmail" = "Votre email";
 
 /* your message */
-"helpLabelMessage" = "your message";
+"helpLabelMessage" = "Votre message";
 
 /* message type */
-"helpLabelType" = "Message type";
+"helpLabelType" = "Type de message";
 
 /* Help label */
-"labelMenuHelp" = "help";
+"labelMenuHelp" = "aide";
 
 /* Parameter label */
-"labelMenuParameter" = "settings";
+"labelMenuParameter" = "paramètres";
 
 /* Bug */
 "pickerBug" = "bug";
@@ -80,20 +80,23 @@
 "pickerQuestion" = "question";
 
 /* Thank you for entering a valide email Message */
-"popupEmailKOMessage" = "Thank you for entering a valid email";
+"popupEmailKOMessage" = "Merci à vous de saisir au préalable un email valide";
 
 /* Thank you for entering a valide email Title */
-"popupEmailKOTitle" = "entering a valide email";
+"popupEmailKOTitle" = "Saisir un email valide";
 
 /* Thank you for entering a message */
-"popupMessageKOMessage" = "Thank you for entering a message";
+"popupMessageKOMessage" = "Merci à vous de saisir au préalable un message";
 
 /* Enter a message */
-"popupMessageKOTitle" = "empty message";
+"popupMessageKOTitle" = "Message vide";
 
 /* message sent successfully */
-"popupSentMessageMessage" = "message sent successfully";
+"popupSentMessageMessage" = "Message envoyé avec succès";
 
 /* Sent message */
-"popupSentMessageTitle" = "message sent";
+"popupSentMessageTitle" = "Message envoyé";
+
+/* Technical error */
+"technicalError" = "Erreur rencontrée. \nAvant toute utilisation, merci de vérifier que openjarvis a été installé sur votre réseau local, que vous avez effectué le paramétrage dans l'appli, et que vous êtes bien connecté en wifi à votre réseau.";
 
