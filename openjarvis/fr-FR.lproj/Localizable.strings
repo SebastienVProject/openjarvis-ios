@@ -55,7 +55,7 @@ Penser au préalable à paramétrer l'url et le port du serveur sur lequel openj
 /* your email */
 "helpLabelEmail" = "Votre email";
 
-/* your message */
+/* your message */ 
 "helpLabelMessage" = "Votre message";
 
 /* message type */

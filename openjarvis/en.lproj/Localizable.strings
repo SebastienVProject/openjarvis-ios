@@ -38,7 +38,7 @@
 /* Message from the openjarvis-ios application */
 "gitIssueMessage" = "(Message from the openjarvis-ios application";
 
-/* User in message */
+/* User in message  */
 "gitIssueUser" = ", and left by the following user: ";
 
 /* send your message */
@@ -61,13 +61,13 @@
 /* message type */
 "helpLabelType" = "Message type";
 
-/* Help label */
+/* Help label */ 
 "labelMenuHelp" = "help";
 
 /* Parameter label */
 "labelMenuParameter" = "settings";
 
-/* Bug */
+/* Bug  */
 "pickerBug" = "bug";
 
 /* Encouragement */
