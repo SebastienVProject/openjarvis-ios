@@ -102,4 +102,6 @@ Carthage/Build
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGONRE THE LOCK FILE
 Pods/
 
+parametresGitIgnore.plist
+
 # End of https://www.gitignore.io/api/swift,macos
