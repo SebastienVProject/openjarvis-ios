@@ -39,29 +39,53 @@ public func TraiterDemande(bulleText: String, containerVue: UIView, scrollVue: U
             }
         }
   
-        var reponseJarvisOK: Bool = false
+        var reponseJarvisOK = false
         Alamofire.request(URL_GET, parameters: PARAMS).responseJSON { response in
             
             if response.result.isSuccess {
                 reponseJarvisOK = true
-                if let retour = response.result.value as? NSArray
-                {
-                    let JSON = retour[0] as! NSDictionary
-                    if let answer = JSON["answer"]{
-                        AjouterBulle(jarvis: true, bulleText: answer as! String, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
-                        if ViewController.audioApplication {
-                            ReponseAudioDevice(reponse: answer as! String)
+                if response.result.value is NSArray {
+                    if let retour = response.result.value as? NSArray
+                    {
+                        if retour.count > 0 {
+                            let JSON = retour[0] as! NSDictionary
+                            if let answer = JSON["answer"]{
+                                AjouterBulle(jarvis: true, bulleText: answer as! String, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
+                                if ViewController.audioApplication {
+                                    ReponseAudioDevice(reponse: answer as! String)
+                                }
+                            }
+                        } else {
+                            let messageJarvis: String = NSLocalizedString("APIReponseEmptyArray", comment: "APIReponseEmptyArray")
+                            AjouterBulle(jarvis: true, bulleText: messageJarvis, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
+                            if ViewController.audioApplication {
+                                ReponseAudioDevice(reponse: messageJarvis)
+                            }
                         }
+                    }
+                } else {
+                    //print("le retour n'a pas la forme d'un tableau")
+                    let JSON = response.result.value as! NSDictionary
+                    let messageJarvis: String = NSLocalizedString("APIReponseNotArray", comment: "APIReponseNotArray") + (JSON["error"] as! String)
+                    AjouterBulle(jarvis: true, bulleText: messageJarvis, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
+                    if ViewController.audioApplication {
+                        ReponseAudioDevice(reponse: messageJarvis)
                     }
                 }
             } else {
                 print("Requete invalide")
             }
         }
-        if !reponseJarvisOK {
-            //pas de wifi - requete KO
-            AjouterBulle(jarvis: true, bulleText: NSLocalizedString("technicalError", comment: "Technical error"), containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
-        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+            if !reponseJarvisOK {
+                //pas de wifi - requete KO
+                let messageJarvis = NSLocalizedString("technicalError", comment: "Technical error")
+                AjouterBulle(jarvis: true, bulleText: messageJarvis, containerVue: containerVue, scrollVue: scrollVue, messageVue: messageVue)
+                if ViewController.audioApplication {
+                    ReponseAudioDevice(reponse: messageJarvis)
+                }
+            }
+        })
     }
 }
 
@@ -69,7 +93,7 @@ public func ReponseAudioDevice(reponse: String){
     
     let speechUtterance = AVSpeechUtterance(string: reponse)
     speechUtterance.voice=AVSpeechSynthesisVoice(language: NSLocalizedString("codeLangue", comment: "code langue"))
-    speechUtterance.volume = 10
+    //speechUtterance.volume = 10
     speechSynthesizer.speak(speechUtterance)
 }
 

@@ -100,3 +100,12 @@
 
 /* Technical error */
 "technicalError" = "Error encountered. \nBefore any use, please check that openjarvis has been installed on your local network, that you have made the settings in the app, and that you are well connected in wifi to your network.";
+
+/* APIReponseNotArray */
+"APIReponseNotArray" = "Error encountered with openjarvis: ";
+
+
+/* APIReponseEmptyArray */
+"APIReponseEmptyArray" = "No information has been returned by openjarvis";
+
+

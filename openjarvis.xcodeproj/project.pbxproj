@@ -25,6 +25,7 @@
 		2D34E2151EE45EA000D84B15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */; };
 		2DCB57491EF29FB000D59B08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB574B1EF29FB000D59B08 /* Localizable.strings */; };
 		2DCB574E1EF29FB100D59B08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB57501EF29FB100D59B08 /* InfoPlist.strings */; };
+		2DCB57571EF7E62300D59B08 /* parametresGitIgnore.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCB57561EF7E62200D59B08 /* parametresGitIgnore.plist */; };
 		2DE7DCFE1EEB503F001179A0 /* micro.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7DCFD1EEB503F001179A0 /* micro.png */; };
 		2DE7DD001EEB5348001179A0 /* microON.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE7DCFF1EEB5348001179A0 /* microON.png */; };
 		DC9FF098A3EE4F552E2E424E /* Pods_openjarvis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CFB2BD4C5847A73AA2DF2 /* Pods_openjarvis.framework */; };
@@ -58,6 +59,7 @@
 		2DCB57531EF2A26200D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2DCB57541EF2A26200D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2DCB57551EF2A26300D59B08 /* fr-FR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-FR"; path = "fr-FR.lproj/Main.strings"; sourceTree = "<group>"; };
+		2DCB57561EF7E62200D59B08 /* parametresGitIgnore.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = parametresGitIgnore.plist; sourceTree = "<group>"; };
 		2DE7DCFD1EEB503F001179A0 /* micro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro.png; sourceTree = "<group>"; };
 		2DE7DCFF1EEB5348001179A0 /* microON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microON.png; sourceTree = "<group>"; };
 		32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openjarvis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-openjarvis/Pods-openjarvis.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				2D34E2131EE45EA000D84B15 /* LaunchScreen.storyboard */,
 				2D34E2161EE45EA000D84B15 /* Info.plist */,
 				2D235C071EE5922C003F7F1A /* parametres.plist */,
+				2DCB57561EF7E62200D59B08 /* parametresGitIgnore.plist */,
 				2D235C061EE4B132003F7F1A /* images */,
 			);
 			path = openjarvis;
@@ -232,6 +235,7 @@
 				2D235C031EE4B126003F7F1A /* whiteBulle.png in Resources */,
 				2D235C051EE4B126003F7F1A /* engrenage.png in Resources */,
 				2D34E2101EE45EA000D84B15 /* Main.storyboard in Resources */,
+				2DCB57571EF7E62300D59B08 /* parametresGitIgnore.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +446,7 @@
 			baseConfigurationReference = 32A2250CBC7A623B983F01CC /* Pods-openjarvis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = openjarvis/openjarvis.entitlements;
 				DEVELOPMENT_TEAM = Q735H4RZJ8;
 				INFOPLIST_FILE = openjarvis/Info.plist;
@@ -457,6 +462,7 @@
 			baseConfigurationReference = A70BEB95934136C522FC9698 /* Pods-openjarvis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = openjarvis/openjarvis.entitlements;
 				DEVELOPMENT_TEAM = Q735H4RZJ8;
 				INFOPLIST_FILE = openjarvis/Info.plist;

@@ -50,7 +50,7 @@
 Penser au préalable à paramétrer l'url et le port du serveur sur lequel openjarvis est installé. Indiquer également la sortie audio souhaitée.";
 
 /* Introductory text on the help screen */
-"helpIntroduction" = "Pour toute question, ou encouragement, ou demande d'évolution, ou bug détecté, n'hésitez pas à contacter l'auteur en remplissant le formulaire ci-dessous:";
+"helpIntroduction" = "Pour toute question, ou encouragement, ou demande d'évolution, ou bug détecté, n'hésitez pas à me contacter en remplissant le formulaire ci-dessous:";
 
 /* your email */
 "helpLabelEmail" = "Votre email";
@@ -100,3 +100,8 @@ Penser au préalable à paramétrer l'url et le port du serveur sur lequel openj
 /* Technical error */
 "technicalError" = "Erreur rencontrée. \nAvant toute utilisation, merci de vérifier que openjarvis a été installé sur votre réseau local, que vous avez effectué le paramétrage dans l'appli, et que vous êtes bien connecté en wifi à votre réseau.";
 
+/* APIReponseNotArray */
+"APIReponseNotArray" = "Une erreur a été rencontrée au niveau de l'appel à openjarvis: ";
+
+/* APIReponseEmptyArray */
+"APIReponseEmptyArray" = "Aucune information a été retournée par openjarvis";

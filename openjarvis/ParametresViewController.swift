@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyPlistManager
 
-class ParametresViewController: UIViewController {
+class ParametresViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var urlJarvisText: UITextField!
     @IBOutlet weak var portJarvisText: UITextField!
@@ -60,25 +60,32 @@ class ParametresViewController: UIViewController {
         blurEffectView.frame = GlobalView.bounds
         imageJarvisParam.addSubview(blurEffectView)
         
-        if UIDevice.current.model == "iPad" {
-            //on adapte la taille de police au format tablette
-            let ajustement: CGFloat = 10
-            labelUrl.font = labelUrl.font.withSize(labelUrl.font.pointSize + ajustement)
-            labelPort.font = labelPort.font.withSize(labelPort.font.pointSize + ajustement)
-            labelAPIKey.font = labelAPIKey.font.withSize(labelAPIKey.font.pointSize + ajustement)
-            labelAudioServer.font = labelAudioServer.font.withSize(labelAudioServer.font.pointSize + ajustement)
-            labelAudioApplication.font = labelAudioApplication.font.withSize(labelAudioApplication.font.pointSize + ajustement)
-            labelFont.font = labelFont.font.withSize(labelFont.font.pointSize + ajustement)
-            labelFontJarvis.font = labelFontJarvis.font.withSize(labelFontJarvis.font.pointSize + ajustement)
-            
-            urlJarvisText.font = urlJarvisText.font?.withSize((urlJarvisText.font?.pointSize)! + ajustement)
-            portJarvisText.font = portJarvisText.font?.withSize((portJarvisText.font?.pointSize)! + ajustement)
-            keyAPIJarvis.font = keyAPIJarvis.font?.withSize((keyAPIJarvis.font?.pointSize)! + ajustement)
-            taillePoliceText.font = taillePoliceText.font?.withSize((taillePoliceText.font?.pointSize)! + ajustement)
-            taillePoliceJarvisText.font = taillePoliceJarvisText.font?.withSize((taillePoliceJarvisText.font?.pointSize)! + ajustement)
-        }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HelpViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+//        if UIDevice.current.model == "iPad" {
+//            //on adapte la taille de police au format tablette
+//            let ajustement: CGFloat = 10
+//            labelUrl.font = labelUrl.font.withSize(labelUrl.font.pointSize + ajustement)
+//            labelPort.font = labelPort.font.withSize(labelPort.font.pointSize + ajustement)
+//            labelAPIKey.font = labelAPIKey.font.withSize(labelAPIKey.font.pointSize + ajustement)
+//            labelAudioServer.font = labelAudioServer.font.withSize(labelAudioServer.font.pointSize + ajustement)
+//            labelAudioApplication.font = labelAudioApplication.font.withSize(labelAudioApplication.font.pointSize + ajustement)
+//            labelFont.font = labelFont.font.withSize(labelFont.font.pointSize + ajustement)
+//            labelFontJarvis.font = labelFontJarvis.font.withSize(labelFontJarvis.font.pointSize + ajustement)
+//            
+//            urlJarvisText.font = urlJarvisText.font?.withSize((urlJarvisText.font?.pointSize)! + ajustement)
+//            portJarvisText.font = portJarvisText.font?.withSize((portJarvisText.font?.pointSize)! + ajustement)
+//            keyAPIJarvis.font = keyAPIJarvis.font?.withSize((keyAPIJarvis.font?.pointSize)! + ajustement)
+//            taillePoliceText.font = taillePoliceText.font?.withSize((taillePoliceText.font?.pointSize)! + ajustement)
+//            taillePoliceJarvisText.font = taillePoliceJarvisText.font?.withSize((taillePoliceJarvisText.font?.pointSize)! + ajustement)
+//        }
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -129,7 +136,14 @@ class ParametresViewController: UIViewController {
         ViewController.fontSizeJarvis = Int(sender.value)
         updatePlistParametres(key: "fontSizeJarvis", valeur: ViewController.fontSizeJarvis)
     }
-    
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (string == "\n") {
+            textField.resignFirstResponder()
+            return false
+        }
+        return true
+    }
     /*
     // MARK: - Navigation
 

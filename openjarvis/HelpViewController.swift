@@ -100,9 +100,17 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
   
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if(text == "\n") {
-            textView.resignFirstResponder()
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        if(text == "\n") {
+//            textView.resignFirstResponder()
+//            return false
+//        }
+//        return true
+//    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (string == "\n") {
+            textField.resignFirstResponder()
             return false
         }
         return true
@@ -161,7 +169,7 @@ class HelpViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let URL_POST = "https://api.github.com/repos/SebastienVProject/openjarvis-ios/issues"
         
         var headers: HTTPHeaders = [:]
-        headers["Authorization"] = "token 8adc04cbea1d6d76e308c198f00a72be1424466b"
+        headers["Authorization"] = "token " + ViewController.gitAPIKey
         
         var PARAMS : Parameters = [:]
         PARAMS["title"] = titleIssue

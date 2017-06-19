@@ -21,6 +21,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     static var fontStyle: String!
     static var fontStyleJarvis: String!
     static var keyAPIJarvis: String?
+    static var gitAPIKey: String!
     
     static var heightContainer: Double!
     
@@ -126,7 +127,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 ViewController.keyAPIJarvis = result as? String
             }
         }
-        
+        SwiftyPlistManager.shared.getValue(for: "gitApiKey", fromPlistWithName: "parametresGitIgnore") { (result, err) in
+            if err == nil {
+                ViewController.gitAPIKey = result as? String
+            }
+        }
+
         ViewController.heightContainer = 10
         /*
          let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
